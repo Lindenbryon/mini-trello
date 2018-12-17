@@ -7,10 +7,13 @@ import { DashboardService } from '../../services/dashboard/dashboard.service';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-
+  boardItems: any;
   constructor(private dash: DashboardService) { }
 
   ngOnInit() {
+    this.dash.getBoards().subscribe((data) => {
+      console.log(data);
+    });
   }
 
 }

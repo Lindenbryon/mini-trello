@@ -24,11 +24,7 @@ export class DashboardService {
 
   }
   getBoards(){
-    return new Promise((resolve, reject) =>{
-        this.afs.collection('boards').snapshotChanges();
-        resolve();
-    });
-
+      return this.afs.collection('boards').snapshotChanges();
   }
   deleteBoard(id: string){
     return new Promise((resolve, reject) => {
