@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DashboardService } from '../../services/dashboard/dashboard.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-board',
@@ -7,13 +8,17 @@ import { DashboardService } from '../../services/dashboard/dashboard.service';
   styleUrls: ['./board.component.css']
 })
 export class BoardComponent implements OnInit {
-  boardItems: any;
-  constructor(private dash: DashboardService) { }
+    @Input() board: any;
+    name: string;
+    boardId: string;
+  constructor(private dash: DashboardService, private router: Router) { }
 
   ngOnInit() {
-    this.dash.getBoards().subscribe((data) => {
-      console.log(data);
-    });
+      this.name = this.board.payload.doc.data().name;
+      this.boardId = this.board.payload.doc.id;
+  }
+  goToBoard(){
+
   }
 
 }

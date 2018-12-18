@@ -1,3 +1,4 @@
+<h4>Dashboard</h4>
 <mat-card>
     <button (click)="toggleAddBoard($event)">Create a new board</button>
     <div class="add-board-content" style="display:none;">
@@ -9,5 +10,5 @@
 </mat-card>
 
 <div class="boards">
-  <app-board></app-board>
+    <app-board *ngFor="let board of boards | async" [board]="board"></app-board>
 </div>

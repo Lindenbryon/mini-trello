@@ -13,6 +13,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { BoardComponent } from './components/board/board.component';
 import { BoardItemComponent } from './components/board-item/board-item.component';
+import { TDashboardComponent } from './components/t-dashboard/t-dashboard.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { BoardItemComponent } from './components/board-item/board-item.component
     AppComponent,
     DashboardComponent,
     BoardComponent,
-    BoardItemComponent
+    BoardItemComponent,
+    TDashboardComponent
   ],
   imports: [
     BrowserModule,
