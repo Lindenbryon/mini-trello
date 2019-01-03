@@ -18,11 +18,7 @@ export class DashboardComponent implements OnInit {
   }
   toggleAddBoard(event){
     this.addBoardDiv = event.target.nextSibling;
-    if(this.addBoardDiv.style.display === 'none'){
-      this.addBoardDiv.style.display = 'block';
-    }else {
-      this.addBoardDiv.style.display = 'none';
-    }
+    this.addBoardDiv.style.display === 'none' ? this.addBoardDiv.style.display = 'block' : this.addBoardDiv.style.display = 'none';
   }
   createNewBoard() {
     this.dash.addBoard(this.boardName).then((data)=>{

@@ -14,6 +14,9 @@ import { environment } from '../environments/environment';
 import { BoardComponent } from './components/board/board.component';
 import { BoardItemComponent } from './components/board-item/board-item.component';
 import { TDashboardComponent } from './components/t-dashboard/t-dashboard.component';
+import { NotFoundComponentComponent } from './components/not-found-component/not-found-component.component';
+import { CreateListComponent } from './components/create-list/create-list.component';
+import { ListItemComponent } from './components/list-item/list-item.component';
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import { TDashboardComponent } from './components/t-dashboard/t-dashboard.compon
     DashboardComponent,
     BoardComponent,
     BoardItemComponent,
-    TDashboardComponent
+    TDashboardComponent,
+    NotFoundComponentComponent,
+    CreateListComponent,
+    ListItemComponent
   ],
   imports: [
     BrowserModule,

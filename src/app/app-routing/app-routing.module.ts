@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import {  DashboardComponent } from '../components/dashboard/dashboard.component';
 import { TDashboardComponent } from '../components/t-dashboard/t-dashboard.component';
+import { NotFoundComponentComponent } from '../components/not-found-component/not-found-component.component';
+
+
 
 const routes: Routes = [
   {
@@ -17,6 +20,14 @@ const routes: Routes = [
   {
     path: 'board/:id',
     component: TDashboardComponent
+  },
+  {
+    path: '404',
+    component: NotFoundComponentComponent
+  },
+  {
+    path: '**',
+    component: NotFoundComponentComponent
   }
 ];
 @NgModule({
