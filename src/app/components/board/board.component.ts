@@ -17,8 +17,4 @@ export class BoardComponent implements OnInit {
       this.name = this.board.payload.doc.data().name;
       this.boardId = this.board.payload.doc.id;
   }
-  goToBoard(){
-
-  }
-
 }

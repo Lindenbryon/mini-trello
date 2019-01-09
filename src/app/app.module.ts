@@ -12,11 +12,11 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { BoardComponent } from './components/board/board.component';
-import { BoardItemComponent } from './components/board-item/board-item.component';
 import { TDashboardComponent } from './components/t-dashboard/t-dashboard.component';
 import { NotFoundComponentComponent } from './components/not-found-component/not-found-component.component';
 import { CreateListComponent } from './components/create-list/create-list.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
+import { ListComponent } from './components/list/list.component';
 
 
 @NgModule({
@@ -24,11 +24,11 @@ import { ListItemComponent } from './components/list-item/list-item.component';
     AppComponent,
     DashboardComponent,
     BoardComponent,
-    BoardItemComponent,
     TDashboardComponent,
     NotFoundComponentComponent,
     CreateListComponent,
-    ListItemComponent
+    ListItemComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 <div class="add-list-container">
   <button (click)="ShowListNameInput($event)">Create List</button>
   <div style="display:none;">
-    <input type="text">
+    <input type="text" value="listName" [(ngModel)]="listName">
     <button (click)="createList()">Create</button>
   </div>
 </div>

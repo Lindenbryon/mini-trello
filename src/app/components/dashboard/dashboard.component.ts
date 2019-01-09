@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
     this.addBoardDiv.style.display === 'none' ? this.addBoardDiv.style.display = 'block' : this.addBoardDiv.style.display = 'none';
   }
   createNewBoard() {
-    this.dash.addBoard(this.boardName).then((data)=>{
+    this.dash.addBoard(this.boardName).then((data) => {
         this.addBoardDiv.style.display = "none";
     }, (error) => {
         console.log("failed");

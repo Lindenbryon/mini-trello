@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ListService} from '../../services/list/list.service';
 
 @Component({
   selector: 'create-list',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-list.component.css']
 })
 export class CreateListComponent implements OnInit {
-
-  constructor() { }
+  @Input()
+    listName: string;
+  constructor(private listService: ListService) { }
 
   ngOnInit()
   {
@@ -18,7 +20,11 @@ export class CreateListComponent implements OnInit {
     nameInput.style.display === 'none' ? nameInput.style.display = 'block' : nameInput.style.display = 'none';
   }
   createList(){
-
+    this.listService.createTrelloList(this.listName).then(() => {
+        console.log('resolved');
+    }, (error) => {
+      console.log(error);
+    });
   }
 
 }
