@@ -17,6 +17,7 @@ import { NotFoundComponentComponent } from './components/not-found-component/not
 import { CreateListComponent } from './components/create-list/create-list.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { ListComponent } from './components/list/list.component';
+import { ListItemChildComponent } from './components/list-item-child/list-item-child.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ListComponent } from './components/list/list.component';
     NotFoundComponentComponent,
     CreateListComponent,
     ListItemComponent,
-    ListComponent
+    ListComponent,
+    ListItemChildComponent
   ],
   imports: [
     BrowserModule,

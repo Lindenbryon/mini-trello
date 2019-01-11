@@ -17,7 +17,7 @@ export class DashboardService {
       }).then(() =>{
         resolve();
       }).catch((error) => {
-        reject();
+        reject(error);
       });
 
     });
@@ -28,7 +28,11 @@ export class DashboardService {
   }
   deleteBoard(id: string){
     return new Promise((resolve, reject) => {
-
+        this.afs.collection('boards').doc(id).delete().then(() => {
+          resolve();
+        }).catch((error) => {
+          reject(error);
+        });
     });
   }
 }

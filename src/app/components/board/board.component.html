@@ -1,4 +1,5 @@
 <mat-card>
   <a [routerLink]="['/board', boardId]">{{ name }}</a>
+  <button id="delete-link" (click)="deleteBoard()">Delete</button>
 </mat-card>
 

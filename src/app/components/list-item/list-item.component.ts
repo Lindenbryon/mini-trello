@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { ActivatedRoute} from '@angular/router';
+import { ListService} from '../../services/list/list.service';
 
 @Component({
   selector: 'app-list-item',
@@ -9,10 +10,20 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ListItemComponent implements OnInit {
   @Input() list: any;
   listname: string;
-  constructor() { }
+  listItemId: string;
+  constructor(private route: ActivatedRoute, private listService: ListService) { }
 
   ngOnInit() {
-    console.log(this.list);
+      this.listname = this.list.payload.doc.data().list_name;
+      this.listItemId = this.list.payload.doc.id;
+      console.log(this.listItemId);
+  }
+  deleteListItem() {
+      this.listService.deleteListItem(this.listItemId).then(() => {
+
+      }, (error) => {
+        console.log(error);
+    });
   }
 
 }

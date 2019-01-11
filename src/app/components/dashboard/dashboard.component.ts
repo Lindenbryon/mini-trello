@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../services/dashboard/dashboard.service';
 import { Observable } from 'rxjs';
 
+
 @Component({
   selector: 'dashboard',
   templateUrl: './dashboard.component.html',
@@ -9,12 +10,14 @@ import { Observable } from 'rxjs';
 })
 export class DashboardComponent implements OnInit {
   boardName: string = null;
+  boardId: string = null;
   boards: Observable<any[]>;
   addBoardDiv: any;
   constructor(private dash: DashboardService) { }
 
   ngOnInit() {
       this.boards = this.dash.getBoards();
+      console.log(this.boards);
   }
   toggleAddBoard(event){
     this.addBoardDiv = event.target.nextSibling;

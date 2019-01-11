@@ -2,5 +2,5 @@
   <create-list></create-list>
 </p>
 <div class="lists">
-  <app-list-item *ngFor="let list of lists | async" [list]="list"></app-list-item>
+  <app-list-item (click)="test()" *ngFor="let list of lists | async" [list]="list"></app-list-item>
 </div>

@@ -16,5 +16,9 @@ export class BoardComponent implements OnInit {
   ngOnInit() {
       this.name = this.board.payload.doc.data().name;
       this.boardId = this.board.payload.doc.id;
+
+  }
+  deleteBoard(){
+      this.dash.deleteBoard(this.boardId);
   }
 }
