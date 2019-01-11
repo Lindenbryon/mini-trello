@@ -1,6 +1,9 @@
 <p>
   <create-list></create-list>
 </p>
-<div class="lists">
-  <app-list-item (click)="test()" *ngFor="let list of lists | async" [list]="list"></app-list-item>
+<div class="outer-container">
+  <div class="list-container">
+    <app-list-item (click)="selectList($event)" *ngFor="let list of lists | async" [list]="list"></app-list-item>
+  </div>
 </div>
+

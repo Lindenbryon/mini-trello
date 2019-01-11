@@ -1,5 +1,7 @@
 
 mat-card {
-  display: inline-block;
   width: 300px;
+}
+.cardToggle {
+  border: 1px solid blue;
 }
