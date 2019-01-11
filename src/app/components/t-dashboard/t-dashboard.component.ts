@@ -17,6 +17,7 @@ export class TDashboardComponent implements OnInit {
   }
   selectList(e) {
     let selectedElement = e.target;
+
     if (selectedElement.classList.contains('mat-card')) {
       selectedElement.classList.contains('cardToggle') ? selectedElement.classList.remove('cardToggle') : selectedElement.classList.add('cardToggle');
     }
