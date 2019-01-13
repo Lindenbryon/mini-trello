@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-list-item-child',
@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-item-child.component.css']
 })
 export class ListItemChildComponent implements OnInit {
-
+  @Input() item: any;
+itemName: string;
   constructor() { }
 
   ngOnInit() {
+    this.itemName = this.item.payload.doc.data().task_name;
   }
 
 }

@@ -16,11 +16,20 @@ export class TDashboardComponent implements OnInit {
     this.lists = this.listService.getTrelloLists();
   }
   selectList(e) {
-    let selectedElement = e.target;
-
-    if (selectedElement.classList.contains('mat-card')) {
-      selectedElement.classList.contains('cardToggle') ? selectedElement.classList.remove('cardToggle') : selectedElement.classList.add('cardToggle');
+    let listItems = document.getElementsByClassName('list-item');
+    for(let y = 0, len = listItems.length; y < len; y++){
+      if(listItems[y].classList.contains('cardToggle')){
+        listItems[y].classList.remove('cardToggle');
+      }
     }
+    e.path.forEach(function(path){
+      if(path.classList){
+        if (path.classList.contains('mat-card')) {
+          path.classList.add('cardToggle');
+        }
+      }
+    });
+
 
 
 

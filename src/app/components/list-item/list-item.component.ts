@@ -11,17 +11,27 @@ export class ListItemComponent implements OnInit {
   @Input() list: any;
   listname: string;
   listItemId: string;
+  listItemName: string;
+  listItemObject: any;
   constructor(private route: ActivatedRoute, private listService: ListService) { }
 
   ngOnInit() {
       this.listname = this.list.payload.doc.data().list_name;
       this.listItemId = this.list.payload.doc.id;
-      console.log(this.listItemId);
+      this.listItemObject = this.listService.getListItems(this.listItemId);
   }
   deleteListItem() {
       this.listService.deleteListItem(this.listItemId).then(() => {
 
       }, (error) => {
+        console.log(error);
+    });
+  }
+  addItemToList(){
+    console.log(this.listItemName);
+    this.listService.addItemToList(this.listItemId, this.listItemName).then(() =>{
+
+    }, (error) => {
         console.log(error);
     });
   }
