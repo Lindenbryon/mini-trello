@@ -7,3 +7,8 @@ mat-card {
 .list-item h4 {
   text-align: center;
 }
+.add-task-input {
+  height: 31px;
+  width:100%;
+}
+

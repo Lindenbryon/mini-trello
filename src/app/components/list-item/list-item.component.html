@@ -1,10 +1,12 @@
 <div>
   <mat-card class="list-item">
     <h4>{{ listname }}</h4>
-    <button (click)="deleteListItem()">delete</button>
-    <input type="text" [(ngModel)]="listItemName" name="listItemName">
+    <form (submit)="addItemToList()">
+      <input class="add-task-input" type="text" [(ngModel)]="listItemName" name="listItemName">
+    </form>
     <app-list-item-child *ngFor="let item of listItemObject | async" [item]="item"></app-list-item-child>
-    <button (click)="addItemToList()">add</button>
+    <hr>
+    <button mat-button mat-raised-button color="warn" (click)="deleteListItem()">delete</button>
   </mat-card>
 </div>
 

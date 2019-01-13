@@ -1,8 +1,8 @@
-.add-list-container {
-  border: 1px solid silver;
-  padding: 30px;
-}
 a {
   text-decoration: none;
 }
-
+h1 {
+  text-align: center;
+  font-family: sans-serif;
+  color: #868686;
+}

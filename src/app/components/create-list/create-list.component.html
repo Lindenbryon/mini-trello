@@ -1,7 +1,9 @@
+<h1>Mini Trello Board</h1>
+<hr>
 <div class="add-list-container">
-  <button (click)="ShowListNameInput($event)">Create List</button>
+  <button mat-button mat-raised-button color="primary" (click)="ShowListNameInput($event)">Create List</button>
   <div style="display:none;">
     <input type="text" value="listName" [(ngModel)]="listName">
-    <button (click)="createList()">Create</button>
+    <button mat-button mat-raised-button color="primary" (click)="createList()">Create</button>
   </div>
 </div>

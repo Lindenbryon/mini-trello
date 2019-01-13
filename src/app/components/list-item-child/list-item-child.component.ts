@@ -13,5 +13,8 @@ itemName: string;
   ngOnInit() {
     this.itemName = this.item.payload.doc.data().task_name;
   }
+  deleteListItem(){
+
+  }
 
 }
