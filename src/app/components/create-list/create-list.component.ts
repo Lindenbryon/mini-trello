@@ -20,19 +20,15 @@ export class CreateListComponent implements OnInit {
         this.boardId = url.get('id');
     });
   }
-  ShowListNameInput(event) {
-    let nameInput = event.target.nextSibling;
-    console.log(nameInput);
-    console.log(nameInput.style.display);
-    nameInput.style.display === 'none' ? nameInput.style.display = 'block' : nameInput.style.display = 'none';
-  }
   createList() {
-    this.dateAdded = new Date();
-    this.listService.createTrelloList(this.listName, this.boardId, this.dateAdded).then(() => {
+    if (this.listName !== '') {
+      this.dateAdded = new Date();
+      this.listService.createTrelloList(this.listName, this.boardId, this.dateAdded).then(() => {
         console.log('resolved');
-    }, (error) => {
-      console.log(error);
-    });
+      }, (error) => {
+        console.log(error);
+      });
+    }
   }
 
 }

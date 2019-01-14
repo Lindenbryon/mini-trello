@@ -16,7 +16,6 @@ import { TDashboardComponent } from './components/t-dashboard/t-dashboard.compon
 import { NotFoundComponentComponent } from './components/not-found-component/not-found-component.component';
 import { CreateListComponent } from './components/create-list/create-list.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
-import { ListComponent } from './components/list/list.component';
 import { ListItemChildComponent } from './components/list-item-child/list-item-child.component';
 
 
@@ -29,7 +28,6 @@ import { ListItemChildComponent } from './components/list-item-child/list-item-c
     NotFoundComponentComponent,
     CreateListComponent,
     ListItemComponent,
-    ListComponent,
     ListItemChildComponent
   ],
   imports: [
