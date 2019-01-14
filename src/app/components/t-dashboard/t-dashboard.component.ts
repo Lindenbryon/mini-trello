@@ -17,13 +17,13 @@ export class TDashboardComponent implements OnInit {
   }
   selectList(e) {
     let listItems = document.getElementsByClassName('list-item');
-    for(let y = 0, len = listItems.length; y < len; y++){
-      if(listItems[y].classList.contains('cardToggle')){
+    for (let y = 0, len = listItems.length; y < len; y++) {
+      if (listItems[y].classList.contains('cardToggle')) {
         listItems[y].classList.remove('cardToggle');
       }
     }
-    e.path.forEach(function(path){
-      if(path.classList){
+    e.path.forEach(function(path) {
+      if (path.classList) {
         if (path.classList.contains('mat-card')) {
           path.classList.add('cardToggle');
         }

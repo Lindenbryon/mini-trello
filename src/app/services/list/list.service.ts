@@ -9,11 +9,12 @@ export class ListService {
 
   constructor(private afs: AngularFirestore) { }
 
-  createTrelloList(listName: string, boardId: string){
+  createTrelloList(listName: string, boardId: string, dateAdded: any) {
     return new Promise((resolve, reject) => {
         this.afs.collection('board_items').add({
               list_name: listName,
-              board_id: boardId
+              board_id: boardId,
+              date_added: dateAdded
         }).then(() => {
           resolve();
         }).catch(() => {
@@ -33,7 +34,7 @@ export class ListService {
       });
     });
   }
-  addItemToList(id, name){
+  addItemToList(id, name) {
     return new Promise((resolve, reject) => {
         this.afs.collection('board_item_children').add({
           board_id: id,
@@ -42,14 +43,20 @@ export class ListService {
           resolve();
         }).catch((error) => {
           reject(error);
-        })
+        });
     });
   }
 
-  getListItems(id: string){
-    return this.afs.collection("board_item_children", ref => ref.where("board_id", "==", id)).snapshotChanges();
+  getListItems(id: string) {
+    return this.afs.collection('board_item_children', ref => ref.where('board_id', '==', id)).snapshotChanges();
   }
-  deleteListItemChild(){
-
+  deleteListItemChild(id: string) {
+      return new Promise((resolve, reject) => {
+        this.afs.collection('board_item_children').doc(id).delete().then(() => {
+          resolve();
+        }).catch((error) => {
+          reject(error);
+        });
+      });
   }
 }

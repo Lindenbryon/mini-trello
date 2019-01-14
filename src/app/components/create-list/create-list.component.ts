@@ -11,6 +11,7 @@ export class CreateListComponent implements OnInit {
   @Input()
     listName: string;
     boardId: string = null;
+    dateAdded: any;
   constructor(private listService: ListService, private route: ActivatedRoute) { }
 
   ngOnInit()
@@ -19,12 +20,15 @@ export class CreateListComponent implements OnInit {
         this.boardId = url.get('id');
     });
   }
-  ShowListNameInput(event){
+  ShowListNameInput(event) {
     let nameInput = event.target.nextSibling;
+    console.log(nameInput);
+    console.log(nameInput.style.display);
     nameInput.style.display === 'none' ? nameInput.style.display = 'block' : nameInput.style.display = 'none';
   }
-  createList(){
-    this.listService.createTrelloList(this.listName, this.boardId).then(() => {
+  createList() {
+    this.dateAdded = new Date();
+    this.listService.createTrelloList(this.listName, this.boardId, this.dateAdded).then(() => {
         console.log('resolved');
     }, (error) => {
       console.log(error);

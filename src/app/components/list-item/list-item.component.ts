@@ -18,6 +18,7 @@ export class ListItemComponent implements OnInit {
   ngOnInit() {
       this.listname = this.list.payload.doc.data().list_name;
       this.listItemId = this.list.payload.doc.id;
+
       this.listItemObject = this.listService.getListItems(this.listItemId);
   }
   deleteListItem() {
@@ -27,10 +28,10 @@ export class ListItemComponent implements OnInit {
         console.log(error);
     });
   }
-  addItemToList(){
+  addItemToList() {
     console.log(this.listItemName);
-    this.listService.addItemToList(this.listItemId, this.listItemName).then(() =>{
-
+    this.listService.addItemToList(this.listItemId, this.listItemName).then(() => {
+        this.listItemName = '';
     }, (error) => {
         console.log(error);
     });
