@@ -23,7 +23,7 @@ export class ListService {
     });
   }
   getTrelloLists() {
-    return this.afs.collection('board_items').snapshotChanges();
+    return this.afs.collection('board_items', ref => ref.orderBy('date_added')).snapshotChanges();
   }
   deleteListItem(id: string) {
     return new Promise((resolve, reject) => {
