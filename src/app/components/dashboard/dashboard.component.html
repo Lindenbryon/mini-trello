@@ -1,14 +1,14 @@
-<h4>Dashboard</h4>
-<mat-card>
-    <button (click)="toggleAddBoard($event)">Create a new board</button>
-    <div class="add-board-content" style="display:none;">
-        <h4>What is the board called?</h4>
-        <input type="text" name="boardName" [(ngModel)]="boardName">
-        <button>Cancel</button>
-        <button (click)="createNewBoard()">Create</button>
-    </div>
-</mat-card>
+<h1>Dashboard</h1>
+<button (click)="toggleAddBoard($event)">Create a new board</button>
+<div class="add-board-content" style="display:none;">
+    <h4>What is the board called?</h4>
+    <input type="text" name="boardName" [(ngModel)]="boardName">
+    <button>Cancel</button>
+    <button (click)="createNewBoard()">Create</button>
+</div>
 
-<div class="boards">
+<div class="outer-container">
+  <div class="list-container">
     <app-board *ngFor="let board of boards | async" [board]="board"></app-board>
+  </div>
 </div>

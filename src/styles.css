@@ -3,3 +3,19 @@
 mat-card {
   margin:5px;
 }
+h1, h4 {
+  font-family: sans-serif;
+  color: #868686;
+}
+h1 {
+  text-align: center;
+}
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin:auto;
+}
+.outer-container{
+  width:100%;
+  margin:auto;
+}
