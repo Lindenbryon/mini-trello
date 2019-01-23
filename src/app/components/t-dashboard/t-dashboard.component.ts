@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ListService} from '../../services/list/list.service';
 import {Observable} from 'rxjs';
+import {ActivatedRoute, Router} from "@angular/router";
 
 
 @Component({
@@ -10,10 +11,17 @@ import {Observable} from 'rxjs';
 })
 export class TDashboardComponent implements OnInit {
   lists: Observable<any[]>;
-  constructor(private listService: ListService) { }
+  dashboardId: string;
+  constructor(private listService: ListService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.lists = this.listService.getTrelloLists();
+    this.route.paramMap.subscribe((url) => {
+      this.dashboardId = url.get('id');
+    });
+
+    this.lists = this.listService.getTrelloLists(this.dashboardId);
+
+
   }
   selectList(e) {
     let listItems = document.getElementsByClassName('list-item');
@@ -29,11 +37,10 @@ export class TDashboardComponent implements OnInit {
         }
       }
     });
-
-
-
-
-
   }
+  mainMenu(){
+    this.router.navigate(['/dashboard']);
+  }
+
 
 }

@@ -22,8 +22,8 @@ export class ListService {
         });
     });
   }
-  getTrelloLists() {
-    return this.afs.collection('board_items', ref => ref.orderBy('date_added')).snapshotChanges();
+  getTrelloLists(id: string) {
+    return this.afs.collection('board_items', ref => ref.where("board_id", "==", id).orderBy('date_added')).snapshotChanges();
   }
   deleteListItem(id: string) {
     return new Promise((resolve, reject) => {
